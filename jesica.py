@@ -14,7 +14,7 @@ while True:
 
 	if("jesica" in p) and ("all things" in p) and ("do" in p):
 		pyttsx3.speak("i can do following things for you master")
-		print("I can launch- Notepad, Whatsapp, Recycle Bin,\nMicrosoft edge, alarm, Camera, Time, System info, \npaint, Media Player, Vlc Player, Firefox, \nVirtual Machine, Calculator, Control Panel, Jupyter, \nCan play music for you, \nCan create or Delete a file and folder, \nCan browse on Google, \nand Can browse youtube for you")
+		print("I can launch- Notepad, Whatsapp, Recycle Bin,\n Microsoftedge, alarm, Camera, This Pc folder, Time, System info, \npaint, Media Player, Vlc Player, Firefox, \nVirtual Machine, Calculator, Control Panel, Jupyter, \nCan play music for you, \nCan create or Delete a file and folder, \nCan search on Google, \nand Can browse youtube for you")
 	
 	if("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and (("clock" in p) or ("alarm" in p) or ("alarm clock" in p)):
 		pyttsx3.speak("opening alarm clock")
@@ -155,6 +155,10 @@ while True:
 	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and (("control panel" in p) or ("c panel" in p) or ("cpanel" in p)):
 		pyttsx3.speak("opening control panel")
 		os.system("control panel")
+
+	elif("jesica" in p) and (("run" in p) or ("execute" in p)or ("open" in p)) and (("my pc" in p) or ("mypc" in p) or ("this pc" in p)or ("my Computer" in p)):
+		pyttsx3.speak("opening My Computer")
+		os.system("start explorer shell:mycomputerfolder")
 
 	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and ("vlc player" in p):
 		pyttsx3.speak("opening v l c media player")
