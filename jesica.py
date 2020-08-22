@@ -1,8 +1,9 @@
 #I tried to make this assistant more intreactive as i can, it will greet you as you run it, you can ask her name,you can ask her how she's feeling and in reply she will ask you. and many more things.
 import pyttsx3
 import os
+import webbrowser
 print("*Things You should know before using jesica:-")
-print("1) Always use work jesica Before\After giving a command. \n2) Use command jesica ['what all things you can do']to know the things jesica can do for you.\n")
+print("1) Always use work jesica Before\After giving a command. \n2) Use command jesica ['what all things you can do jesica']to know the things jesica can do for you.\n")
 pyttsx3. speak("Welcome Master. this is jesicaa. your personal assistant at your service")
 pyttsx3. speak("orders master")
 while True:
@@ -13,12 +14,12 @@ while True:
 
 	if("jesica" in p) and ("all things" in p) and ("do" in p):
 		pyttsx3.speak("i can do following things for you master")
-		print("I can launch- Notepad, Whatsapp, Google, Recycle Bin, Microsoftedge, alarm, Youtube, Camera, Time, System info, \nInstagram, Facebook, paint, This PC folder, Media Player, Vlc Player, Firefox, \nVirtual Machine, Calculator, Control Panel, Jupyter, Wikipedia,open mails, You can wish her hi,\n Can ask her how is she and she will respond you back if your mood is not good she even will gonna tell you a joke\n Can play music for you,  \n You can create or Delete a file and folder, \nCan search for you the best teacher for python, \nand search the best course for python")
+		print("I can launch- Notepad, Whatsapp, Recycle Bin,\nMicrosoft edge, alarm, Camera, Time, System info, \npaint, Media Player, Vlc Player, Firefox, \nVirtual Machine, Calculator, Control Panel, Jupyter, \nCan play music for you, \nCan create or Delete a file and folder, \nCan browse on Google, \nand Can browse youtube for you")
 	
 	if("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and (("clock" in p) or ("alarm" in p) or ("alarm clock" in p)):
 		pyttsx3.speak("opening alarm clock")
 		os.system("explorer.exe shell:Appsfolder\Microsoft.WindowsAlarms_8wekyb3d8bbwe!App")
-
+		
 	elif(("hi" in p) or ("hey" in p) or ("hello" in p)) and ("jesica" in p):
 		pyttsx3.speak("hello master")
 
@@ -32,7 +33,7 @@ while True:
 			j=input("yes/no:-")
 			if ("yes" in j):
 				pyttsx3.speak("Maths Teacher : What Is A Line. Santa : A Line Is A Dot That’s Going For A Walk. Teacher : Then What Is A Parallel Line. Santa : A Dot Is Going For A Walk With His Girl Friend.")
-				pyttsx3.speak("i hope now you are feeling some better now")
+				pyttsx3.speak("i hope you are feeling some better now")
 			else:
 				
 				pyttsx3.speak("ok master. everything will be fine")
@@ -72,7 +73,7 @@ while True:
 
 	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and ("camera" in p):
 		pyttsx3.speak("opening Camera. embrace your beauty")
-		os.system("start microsoft.windows.camera:")
+		os.system("start microsoft.windows.camera")
 
 	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and ("firefox" in p):
 		pyttsx3.speak("Running firefox")
@@ -87,10 +88,6 @@ while True:
 		else:
 			pyttsx3.speak("V M ware")
 			os.system("vmware")
-
-	elif("jesica" in p) and (("run" in p) or ("execute" in p)or ("open" in p)) and (("my pc" in p) or ("mypc" in p) or ("this pc" in p)or ("my Computer")):
-		pyttsx3.speak("opening My Computer")
-		os.system("start explorer shell:mycomputerfolder")
 	
 	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and ("system info" in p) or ("system information" in p):
 		pyttsx3.speak("Running system information")
@@ -128,6 +125,17 @@ while True:
 		pyttsx3.speak("ok master deleting the file called"+tus+"from"+re)
 		os.system("del "+path2+tus)
 
+	elif("jesica" in p) and (("delete" in p) or ("remove" in p)) and ("folder" in p):
+		pyttsx3.speak("location of the folder you want to delete")
+		print("Location of the folder:")
+		pe=input("Here:")
+		pyttsx3.speak("name the folder with its type(txt, mp3, etc etc")
+		print("in (txt, mp3, etc etc) format")
+		tushar=input("Here:")
+		path3=("C:\\Users\\admin\\"+pe+"\\")
+		pyttsx3.speak("ok master deleting the file called"+tushar+"from"+pe)
+		os.system("rmdir /s "+path3+tushar)
+
 	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and ("recycle bin" in p):
 		pyttsx3.speak("opening recycle bin")
 		os.system("start shell:RecycleBinFolder")
@@ -145,7 +153,7 @@ while True:
 		os.system("time")
 
 	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and (("control panel" in p) or ("c panel" in p) or ("cpanel" in p)):
-		pyttsx3.speak("running control panel")
+		pyttsx3.speak("opening control panel")
 		os.system("control panel")
 
 	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and ("vlc player" in p):
@@ -156,42 +164,24 @@ while True:
 		pyttsx3.speak("opening jupyter notebook")
 		os.system("jupyter notebook")
 
-	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and (("facebook" in p) or ("fb" in p)):
-		pyttsx3.speak("opening facebook")
-		os.system("chrome https://www.facebook.com/")
-
 	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and ("google" in p):
-		pyttsx3.speak("opening google")
-		os.system("chrome https://www.google.co.in/")
-	
-	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and (("wiki" in p) or ("wikipedia" in p)):
-		pyttsx3.speak("opening Wikipedia")
-		os.system("chrome https://www.wikipedia.org/")
-	
+		pyttsx3.speak("starting google")
+		pyttsx3.speak("Enter your search")
+		command = input("Enter Your Search:")
+		pyttsx3.speak("Searching"+command)
+		webbrowser.open("https://www.google.co.in/?#q=" + command)	
+
 	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and ("youtube" in p):
-		pyttsx3.speak("opening youtube")
-		os.system("chrome https://www.youtube.com/")
-
-	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and (("mails" in p)or ("mail" in p)):
-		pyttsx3.speak("opening your mails")
-		os.system("chrome https://mail.google.com/mail/u/0/#inbox/FMfcgxwJXVJDFRQXmPPvDNVZNtkChMhL")
-
-	elif("jesica" in p) and ("who" in p) and ("best" in p) and ("teacher" in p) and ("python" in p):
-		pyttsx3.speak("searching the best teacher of python")
-		os.system("chrome https://in.linkedin.com/in/vimaldaga")
+		pyttsx3.speak("starting youtube")
+		pyttsx3.speak("Enter your search")
+		command = input("Enter Your Search:")
+		pyttsx3.speak("Searching"+command)
+		webbrowser.open("https://www.youtube.com/results?search_query=" + command)	
 	
-	elif("jesica" in p) and ("learn" in p) and ("python" in p):
-		pyttsx3.speak("searching the best course for python")
-		os.system("chrome https://www.youtube.com/playlist?list=PLAi9X1uG6jZ1s-_ffUVn-e-b0LiUDfQJT")
 	
 	elif("jesica" in p) and ("play" in p) and ("music" in p):
 		pyttsx3.speak("playing music. enjoy master")
 		os.system("chrome https://youtu.be/EiiyYkae33k")
-
-	elif("jesica" in p) and (("run" in p) or ("execute" in p) or ("on" in p) or ("open" in p)) and (("insta" in p) or ("instagram")):
-		pyttsx3.speak("opening your insta account")
-		os.system("chrome https://www.instagram.com/?hl=en")
-		
 
 	elif("jesica" in p) and (("bye" in p) or ("tata" in p) or("seeya" in p)):
 		pyttsx3. speak("bye have a great day master. please come quick")
